@@ -28,10 +28,10 @@ const About = () => {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="relative">
             <img
-              src="/images/founder_nima.webp"
-              alt="Founder of Little Orchids"
-              className="rounded-3xl shadow-xl w-full h-[420px] object-cover"
-            />
+  src="/images/founder_nima.webp"
+  alt="Founder of Little Orchids"
+  className="rounded-3xl shadow-xl w-full h-[420px] object-cover object-left md:object-center"
+/>
             <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-lg px-6 py-4">
               <p className="text-sm text-gray-500">Founder</p>
               <p className="text-lg font-semibold text-gray-900">
