@@ -105,35 +105,33 @@ const Navbar = () => {
       </nav>
 
       {/* 📱 Floating Bottom Quick Links (Mobile Only) */}
-{/* 📱 Floating Bottom Quick Links (Mobile Only) */}
-<div className="md:hidden fixed bottom-0 left-0 right-0 bg-red-50 border-t shadow-lg z-50">
-  <div className="flex justify-around items-center py-2">
+<div className="md:hidden fixed bottom-0 left-0 right-0 bg-red-100 border-t border-red-200 shadow-xl z-50">
+  <div className="flex justify-around items-center py-3">
     <Link
       to="/admissions"
-      className="flex flex-col items-center text-xs font-medium text-gray-700 hover:text-red-600 transition-colors"
+      className="flex flex-col items-center text-sm font-semibold text-red-700 hover:text-red-900 transition-colors"
     >
-      <ClipboardList className="h-5 w-5 mb-1" />
-      Admission Enquiry
+      <ClipboardList className="h-6 w-6 mb-1" />
+      Admission
     </Link>
 
     <Link
       to="/programs"
-      className="flex flex-col items-center text-xs font-medium text-gray-700 hover:text-red-600 transition-colors"
+      className="flex flex-col items-center text-sm font-semibold text-red-700 hover:text-red-900 transition-colors"
     >
-      <BookOpen className="h-5 w-5 mb-1" />
-      Our Programs
+      <BookOpen className="h-6 w-6 mb-1" />
+      Programs
     </Link>
 
     <Link
       to="/contact"
-      className="flex flex-col items-center text-xs font-medium text-gray-700 hover:text-red-600 transition-colors"
+      className="flex flex-col items-center text-sm font-semibold text-red-700 hover:text-red-900 transition-colors"
     >
-      <Phone className="h-5 w-5 mb-1" />
+      <Phone className="h-6 w-6 mb-1" />
       Contact
     </Link>
   </div>
 </div>
-
 
     </>
   );
