@@ -58,15 +58,15 @@ const Home: React.FC = () => {
     <div className="bg-green-600/90 backdrop-blur-md py-4">
       <div className="max-w-6xl mx-auto px-6 grid grid-cols-3 text-center text-white">
         <div>
-          <p className="text-2xl md:text-3xl font-bold">2015</p>
+          <p className="text-2xl md:text-3xl font-bold">2003</p>
           <p className="text-sm md:text-base mt-1">Year Established</p>
         </div>
         <div>
-          <p className="text-2xl md:text-3xl font-bold">500+</p>
+          <p className="text-2xl md:text-3xl font-bold">10000+</p>
           <p className="text-sm md:text-base mt-1">Students Enrolled</p>
         </div>
         <div>
-          <p className="text-2xl md:text-3xl font-bold">40+</p>
+          <p className="text-2xl md:text-3xl font-bold">20+</p>
           <p className="text-sm md:text-base mt-1">Faculty</p>
         </div>
       </div>

@@ -10,10 +10,12 @@ const MainLayout = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setLoading(true);
-    const timer = setTimeout(() => setLoading(false), 500);
-    return () => clearTimeout(timer);
-  }, [location.pathname]); // 🔁 Trigger on every route change
+  const timer = setTimeout(() => {
+    setLoading(false);
+  }, 500);
+
+  return () => clearTimeout(timer);
+}, []);
 
   if (loading) return <PageLoader />;
 
