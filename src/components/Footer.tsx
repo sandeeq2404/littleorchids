@@ -1,81 +1,104 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, Instagram, Linkedin } from "lucide-react";
-import logo from "/images/logo/littleorchids.webp"; // <-- adjust path if needed
+import { Mail, Phone, MapPin, Instagram, Linkedin, Handshake, ChevronRight } from "lucide-react";
+import logo from "/images/logo/littleorchids.webp";
+import React from "react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-800 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Logo Section */}
-          <div>
-            <div className="flex items-center mb-4">
-              <img src={logo} alt="Little Orchids Logo" className="h-12 w-auto" />
-            </div>
-            <p className="text-gray-300 text-sm">
-              Nurturing young minds with love, care, and quality education.
+    <footer className="bg-slate-50 border-t border-slate-200 overflow-hidden relative">
+      {/* Subtle background decoration - slightly boosted opacity for better separation */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-[#00B4D8]/10 to-transparent rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-[#EC4899]/10 to-transparent rounded-full blur-3xl pointer-events-none -z-10" />
+
+      <div className="max-w-7xl mx-auto px-6 pt-20 pb-10 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8">
+
+          {/* ─── Brand & Tagline (Cols 1-4) ─── */}
+          <div className="lg:col-span-4 pr-4">
+            <Link to="/" className="inline-block mb-6">
+              <img src={logo} alt="Little Orchids" className="h-14 w-auto transition-transform hover:scale-105 duration-300" />
+            </Link>
+            <p className="text-slate-500 text-[15px] leading-relaxed mb-8">
+              Nurturing young minds with love, care, and quality education since 2003. We build confident little hearts for a bright future.
             </p>
+            <Link
+              to="/franchise"
+              className="group inline-flex items-center gap-2 text-white font-bold px-6 py-3.5 rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]"
+              style={{ background: "linear-gradient(135deg, #F59E0B 0%, #EC4899 100%)" }}
+            >
+              <Handshake className="h-4 w-4" />
+              Open a Franchise
+            </Link>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link to="/about" className="text-gray-300 hover:text-red-400 transition-colors text-sm">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link to="/programs" className="text-gray-300 hover:text-red-400 transition-colors text-sm">
-                  Our Programs
-                </Link>
-              </li>
-              <li>
-                <Link to="/admissions" className="text-gray-300 hover:text-red-400 transition-colors text-sm">
-                  Admissions
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="text-gray-300 hover:text-red-400 transition-colors text-sm">
-                  Contact Us
-                </Link>
-              </li>
+          {/* ─── Quick Links (Cols 5-7) ─── */}
+          <div className="lg:col-span-3 lg:pl-8">
+            <h3 className="text-sm font-extrabold uppercase tracking-widest text-slate-800 mb-6 flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-[#00B4D8]" /> Quick Links
+            </h3>
+            <ul className="space-y-3.5">
+              {[
+                { to: "/about", label: "About Us" },
+                { to: "/programs", label: "Our Programs" },
+                { to: "/admissions", label: "Admissions 2026-27" },
+                { to: "/gallery", label: "Gallery" },
+                { to: "/news-events", label: "News & Events" },
+              ].map(({ to, label }) => (
+                <li key={to}>
+                  <Link
+                    to={to}
+                    className="group inline-flex items-center text-slate-500 hover:text-[#00B4D8] font-medium transition-colors"
+                  >
+                    <ChevronRight className="w-3.5 h-3.5 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300 mr-1" />
+                    {label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Contact Info */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Contact Info</h3>
-            <ul className="space-y-3">
-              <li className="flex items-start space-x-2">
-                <MapPin className="h-5 w-5 text-red-400 mt-0.5 flex-shrink-0" />
-                <span className="text-gray-300 text-sm">
-                  34/2, Pooram Prakasam Road, Balaji Nagar, Royapettah, Chennai, Tamil Nadu 600014
+          {/* ─── Contact Info (Cols 8-10) ─── */}
+          <div className="lg:col-span-3">
+            <h3 className="text-sm font-extrabold uppercase tracking-widest text-slate-800 mb-6 flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-[#84CC16]" /> Contact Us
+            </h3>
+            <ul className="space-y-5">
+              <li className="flex items-start gap-3 group">
+                <MapPin className="h-5 w-5 text-[#84CC16] mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform" />
+                <span className="text-slate-500 font-medium leading-relaxed">
+                  34/2, Pooram Prakasam Road,<br />
+                  Balaji Nagar, Royapettah,<br />
+                  Chennai, Tamil Nadu 600014
                 </span>
               </li>
-              <li className="flex items-center space-x-2">
-                <Phone className="h-5 w-5 text-red-400 flex-shrink-0" />
-                <span className="text-gray-300 text-sm">+91 90031 24400</span>
+              <li className="flex items-center gap-3 group">
+                <Phone className="h-5 w-5 text-[#84CC16] flex-shrink-0 group-hover:scale-110 transition-transform" />
+                <a href="tel:+919003124400" className="text-slate-500 font-medium hover:text-[#84CC16] transition-colors">
+                  +91 90031 24400
+                </a>
               </li>
-              <li className="flex items-center space-x-2">
-                <Mail className="h-5 w-5 text-red-400 flex-shrink-0" />
-                <span className="text-gray-300 text-sm">info@littleorchids.edu</span>
+              <li className="flex items-center gap-3 group">
+                <Mail className="h-5 w-5 text-[#84CC16] flex-shrink-0 group-hover:scale-110 transition-transform" />
+                <a href="mailto:info@littleorchids.in" className="text-slate-500 font-medium hover:text-[#84CC16] transition-colors">
+                  info@littleorchids.in
+                </a>
               </li>
             </ul>
           </div>
 
-          {/* Social Media */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
-            <div className="flex space-x-4">
+          {/* ─── Social (Cols 11-12) ─── */}
+          <div className="lg:col-span-2">
+            <h3 className="text-sm font-extrabold uppercase tracking-widest text-slate-800 mb-6 flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-[#EC4899]" /> Follow Us
+            </h3>
+            <div className="flex gap-3">
               <a
                 href="https://www.instagram.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gray-700 p-2 rounded-full hover:bg-red-500 transition-colors"
+                className="w-10 h-10 rounded-xl bg-white shadow-sm border border-slate-100 flex items-center justify-center text-slate-400 hover:bg-[#EC4899] hover:border-[#EC4899] hover:text-white transition-all duration-300 hover:-translate-y-1"
                 aria-label="Instagram"
               >
                 <Instagram className="h-5 w-5" />
@@ -84,7 +107,7 @@ const Footer = () => {
                 href="https://www.linkedin.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gray-700 p-2 rounded-full hover:bg-red-500 transition-colors"
+                className="w-10 h-10 rounded-xl bg-white shadow-sm border border-slate-100 flex items-center justify-center text-slate-400 hover:bg-[#00B4D8] hover:border-[#00B4D8] hover:text-white transition-all duration-300 hover:-translate-y-1"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="h-5 w-5" />
@@ -93,18 +116,18 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-gray-700 mt-8 pt-6 text-center space-y-2">
-          <p className="text-gray-400 text-sm">
-            &copy; {currentYear} Little Orchids Play School. All rights reserved.
+        {/* ─── Bottom Bar ─── */}
+        <div className="mt-16 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 border-t border-slate-200">
+          <p className="text-slate-400 text-sm font-medium">
+            © {currentYear} <span className="text-slate-800 font-bold">Little Orchids Play School</span>. All rights reserved.
           </p>
-          <p className="text-gray-500 text-xs">
-            Designed by{" "}
+          <p className="text-slate-400 text-sm font-medium flex items-center gap-1">
+            Designed by
             <a
               href="https://howdway.in"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-red-400 transition-colors"
+              className="text-slate-800 font-extrabold hover:text-[#F59E0B] transition-colors ml-1"
             >
               howdway.in
             </a>
